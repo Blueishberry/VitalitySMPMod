@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "vitalitysmp",
+	"version": "${version}",
+	"name": "VitalitySMP",
+	"description": "Customization options for the VitalitySMP",
+	"authors": [
+		"Blueishberry"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/vitality-smp",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/vitalitysmp/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.blueishberry.vitalitysmp.VitalitySMP"
+		],
+		"client": [
+			"me.blueishberry.vitalitysmp.VitalitySMPClient"
+		]
+	},
+	"mixins": [
+		"vitalitysmp.mixins.json",
+		{
+			"config": "vitalitysmp.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
