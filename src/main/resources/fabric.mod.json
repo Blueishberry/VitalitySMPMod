@@ -11,7 +11,7 @@
 		"homepage": "https://modrinth.com/project/vitality-smp",
 		"sources": "https://github.com/Blueishberry/VitalitySMPMod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/vitalitysmp/icon.png",
 	"environment": "*",
 	"entrypoints": {
