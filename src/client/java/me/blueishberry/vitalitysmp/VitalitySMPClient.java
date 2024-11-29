@@ -12,6 +12,7 @@ public class VitalitySMPClient implements ClientModInitializer {
 	private static KeyBinding primaryAbilityKeybind;
 	private static KeyBinding secondaryAbilityKeybind;
 	private static KeyBinding tertiaryAbilityKeybind;
+	private static KeyBinding uniqueAbilityKeybind;
 	private static KeyBinding modMenuKeybind;
 
 	@Override
@@ -35,6 +36,13 @@ public class VitalitySMPClient implements ClientModInitializer {
 				"key.vitalitysmp.tertiary_ability",
 				InputUtil.Type.KEYSYM,
 				GLFW.GLFW_KEY_O,
+				"category.vitalitysmp"
+		));
+
+		uniqueAbilityKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+				"key.vitalitysmp.unique_ability",
+				InputUtil.Type.KEYSYM,
+				GLFW.GLFW_KEY_LEFT_BRACKET,
 				"category.vitalitysmp"
 		));
 
@@ -63,6 +71,13 @@ public class VitalitySMPClient implements ClientModInitializer {
 			if(tertiaryAbilityKeybind.wasPressed()) {
 				if(minecraftClient.player != null) {
 					String command = "/vtertiary";
+					minecraftClient.player.networkHandler.sendChatCommand(command.substring(1));
+				}
+			}
+
+			if(uniqueAbilityKeybind.wasPressed()) {
+				if(minecraftClient.player != null) {
+					String command = "/vunique";
 					minecraftClient.player.networkHandler.sendChatCommand(command.substring(1));
 				}
 			}
